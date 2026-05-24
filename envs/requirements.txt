@@ -1,0 +1,16 @@
+# Python dependencies for pipeline/ scripts
+# Install with:  pip install -r requirements.txt
+# Or with conda: conda install --file requirements.txt
+
+# Core
+numpy>=1.24
+pandas>=2.0
+pysam>=0.21         # BAM file handling
+biopython>=1.81     # sequence utilities
+
+# ClinVar reshaping (pipeline/01_bc_var_association/)
+lxml>=4.9
+
+# Plotting (optional — most plots are in R)
+matplotlib>=3.7
+seaborn>=0.12

@@ -1,0 +1,18 @@
+# LIB_ID	expdesign_file	project_name	wt_seq	fastq_dir
+# expdesign_file paths are relative to the pipeline directory (02_dimsum/).				
+"# wt_seq: any real sequence present in the data, DiMSum uses it in stage 5"				
+"#         (which we do not run), but it is required. Choose a WT sequence or"				
+#         any sequence known to exist in the FASTQ files.				
+P1	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/P1.txt	20260104_P1	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+P2	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/P2.txt	20260104_P2	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+P3	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/P3.txt	20260104_P3	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGGCCATGGTTATCCGCATGGTTATCGATATCCTTATGA	path_to/OpenSplice/data/raw
+FAS_INDEL	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/FAS_INDEL.txt	20260104_fas_indel	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGG	path_to/OpenSplice/data/raw
+WT1	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/WT1.txt	20260104_WT1	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAATTTAATGGACATGCGTATAATGATCTATATTTGGATCC	path_to/OpenSplice/data/raw
+WT2	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/WT2.txt	20260104_WT2	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAATGACATTAGCATTGTTATTTACATTATGATCTCGATCT	path_to/OpenSplice/data/raw
+WT3	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/WT3.txt	20260104_WT3	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAACCTTATTGACATTGGGATTAATATGGGGATGGCTATCG	path_to/OpenSplice/data/raw
+MUT1	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT1.txt	20260104_MUT1	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAATGTCATTGTTATGTGCATGTGAATGACAATTCATATAT	path_to/OpenSplice/data/raw
+MUT2	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT2.txt	20260104_MUT2	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+MUT3	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT3.txt	20260104_MUT3	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+MUT4	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT4.txt	20260104_MUT4	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+MUT5	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT5.txt	20260104_MUT5	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw
+MUT6	OpenSplice/psi_calculation_pipeline/02_dimsum/expdesign/MUT6.txt	20260104_MUT6	TGAAGAGAAAGGAAGTACAGAAAACATGCAGAAAGCACAGAAAGGAAGCGATCGC	path_to/OpenSplice/data/raw

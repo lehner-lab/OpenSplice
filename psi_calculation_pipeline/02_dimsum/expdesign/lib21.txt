@@ -1,0 +1,8 @@
+sample_name	experiment_replicate	selection_id	selection_replicate	technical_replicate	pair1	pair2	cutadapt5First	cutadapt5Second
+hekR1	1	0		1	hek_21.1_run1.read1.fq.gz	hek_21.1_run1.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+hekR1	1	0		2	hek_21.1_run2.read1.fq.gz	hek_21.1_run2.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+hekR2	1	1	1	1	hek_21.2_run1.read1.fq.gz	hek_21.2_run1.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+hekR2	1	1	1	2	hek_21.2_run2.read1.fq.gz	hek_21.2_run2.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+hekR3	2	0		1	hek_21.3_run1.read1.fq.gz	hek_21.3_run1.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+hekR3	2	0		2	hek_21.3_run2.read1.fq.gz	hek_21.3_run2.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional
+dummy	2	1	1	1	hek_21.1_run1.read1.fq.gz	hek_21.1_run1.read2.fq.gz	AAAGAGGAAG;required...CTACTGATTCGATGCAAGCTT;optional	AAGCTTGCATCGAATCAGTAG;required...CTTCCTCTTTGCACTTGGTG;optional

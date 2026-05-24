@@ -1,0 +1,20 @@
+Experiment type	Ref	name	mutated_seq	library type	N_variant	N_exon	Note
+Exon mutagenesis	10.1038/s41467-018-05748-7	RON exon 11	RON exon 11 - Braun S et al 2018	Single + double mutants	6000	1	
+Exon mutagenesis	"10.1038/ncomms11558,10.1016/j.cell.2018.12.010, 10.7554/eLife.59959,https://doi.org/10.1101/2024.04.21.590414"	FAS exon 6	FAS exon 6 - Baeza-Centurion P et al 2019/2025	Single mutant + combinatorial library + Indel	10479	1	
+Exon mutagenesis	10.1101/gr.219683.116	WT1 exon 5	WT1 exon 5 - Ke S et al 2017	Single mutants + Combinatorial library	5560	1	
+Exon mutagenesis	10.1080/15476286.2019.1630796	SMN1 exon 7	SMN1 exon 7 - Soucek P et al 2019	Single + double mutants	4000	1	
+Exon mutagenesis	10.1038/s41467-022-31818-y	CD19 exon 1-3	CD19 exon 1-3 - Cortes-Lopez M et al 2022	Single mutants in 3 exons	9127	3	
+Disease variants	10.1038/ng.3837	MaPSy 2017	MaPSy -  Soemedi R et al 2017	"4,964 disease-causing exonic mutations"	4964		
+Disease variants	 https://doi.org/10.1101/2024.12.07.627366	MaPSy 2024	MaPSy - Duan C et al 2024	"32,112 exonic mutations"	32112		
+Disease variants	10.1186/s13059-018-1437-x	Vex-seq	Vex-seq - Adamson SI et al 2018	2059 human genetic variants spanning 110 alternative exons	2059		
+Disease variants	10.1016/j.molcel.2018.10.037	MFASS	MFASS - Chong R et al 2019	"27,733 variants in the ExAC within or adjacent to 2,198 human exons"	27733		
+Disease variants	10.1007/s00439-017-1833-4	RB1	RB1 - Cygan KJ et al 2017	Single mutants	30		
+Disease variants	https://doi.org/10.1016/j.ajhg.2024.08.002	RNAseq	RNAseq - Sullivan PJ et al 2024		14313		Sup Table1 SpliceVarDB
+Disease variants	https://doi.org/10.1016/j.ajhg.2024.08.002	Minigene	Minigene - Sullivan PJ et al 2024		990		Sup Table1 SpliceVarDB
+Disease variants	https://doi.org/10.1016/j.ajhg.2024.08.002	RT-PCR	RT-PCR - Sullivan PJ et al 2024		857		Sup Table1 SpliceVarDB
+Disease variants	https://doi.org/10.1073/pnas.1915608116	cBROCA	cBROCA - Casadei S et al 2019	cancer variants	81		
+Disease variants	https://www.biorxiv.org/content/10.1101/2025.10.12.681955v1?ct=ct	COMPASS	COMPASS - Koplik SE et al 2025	87546 disease mutations	87546		107 exons with at least 1/3 of all possible nt sub
+Disease variants	https://pmc.ncbi.nlm.nih.gov/articles/PMC11179192/	SpliceAPP	SpliceAPP - Huang AC et al 2024	11k intronic variants	11191		cannot find list of assessed variants
+Exon mutagenesis		OpenSplice	OpenSplice		598953	608	this study
+Exon mutagenesis	https://www.biorxiv.org/content/10.1101/2025.11.05.686847v1.full.pdf	SPICE	SPICE (Sat mutagenesis) - Chen XD et al 2025	9670 variants (1nt subs) - 15 exons	9670	15	15 exons
+WT screen	https://www.biorxiv.org/content/10.1101/2025.11.05.686847v1.full.pdf	SPICE	SPICE (WT screen) - Chen XD et al 2025	46372 WT 	46372		
