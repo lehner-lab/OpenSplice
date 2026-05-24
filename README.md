@@ -4,7 +4,7 @@
 
 Gioia Quarantani, Joseph Clarke, Mike Thompson, Fei Sang, Juan Valcárcel, Ben Lehner
 
-**Interactive browser:** https://results.hgi.sanger.ac.uk/OpenSplice/
+**Interactive browser ExonExplorer:** https://results.hgi.sanger.ac.uk/OpenSplice/
 
 ---
 
@@ -40,15 +40,15 @@ OpenSplice/
 │
 ├── data/
 │   ├── raw/                            ← raw sequencing data 
-│   ├── processed/                      ← HPC pipeline outputs 
+│   ├── processed/                      ← HPC pipeline outputs (add here the PSI per barcode)
 │   └── databases/                      ← external reference files (MaxEntScan, ClinVar, …)
 │
 ├── results/
-│   ├── psi_per_variant/                ← output of 00_master_table_creation.R
+│   ├── psi_per_variant/                ← output of 'psi_calculation_pipeline/04_psi_per_variant/'
 │   ├── analysis/                       ← per-script result tables
 │   └── supplementary_tables/           ← Supplementary Tables (TSV)
 │
-├── figures/                            ← generated figures (gitignored — reproducible from scripts)
+├── figures/                            ← stored figures
 │
 └── envs/
     ├── requirements.txt                ← Python dependencies (pip / conda)
@@ -78,9 +78,8 @@ renv::restore()
 
 ### 3. Download data
 
-Download raw and processed data from ENA ([PRJEB111846](https://www.ebi.ac.uk/ena/browser/view/PRJEB111846))
-and Figshare (https://doi.org/10.6084/m9.figshare.32337414) and place them in
-`data/raw/` and `data/processed/` respectively.
+Download raw and processed data from ENA ([PRJEB111846](https://www.ebi.ac.uk/ena/browser/view/PRJEB111846)) and place them in `data/raw/` 
+Download PSI per barcode tables from Figshare (https://doi.org/10.6084/m9.figshare.32337414) and place them in `data/processed/03_psi_per_barcode`
 
 The following external database files must be downloaded separately and placed in
 `data/databases/` (paths are defined in `analysis/config.R`):
@@ -94,7 +93,24 @@ The following external database files must be downloaded separately and placed i
 | `branch_point/lstm.gencode_v19.hg19.top.bed.gz` | LaBranchoR — http://bejerano.stanford.edu/labranchor/downloads/dat/lstm.gencode_v19.hg19.top.bed.gz |
 | `branch_point/lstm.gencode_v19.hg19.all.tsv.gz` | LaBranchoR — http://bejerano.stanford.edu/labranchor/downloads/dat/lstm.gencode_v19.hg19.all.tsv.gz |
 
-### 4. Build the master table
+## 4. HPC pipeline
+
+The `psi_calculation_pipeline/` directory contains the compute-intensive processing steps
+(barcode–variant association → DiMSum → PSI per barcode → PSI per variant).
+See [`psi_calculation_pipeline/README.md`](psi_calculation_pipeline/README.md) for
+cluster-specific instructions.
+
+> **Shortcut 1:** if you download the `psi_per_barcode` files from Figshare
+> (https://doi.org/10.6084/m9.figshare.32337414) and place them under
+> `data/processed/03_psi_per_barcode/`, you can skip steps 01–03 and start
+> directly from `psi_calculation_pipeline/04_psi_per_variant/`.
+
+> **Shortcut 2:** if you download the `Supplementary_Table4.tsv` file from the preprint
+>  and place it under `results/supplementary_tables/Supplementary_Table4.tsv`,
+> you can skip all the psi_calculation_pipeline steps + analysis/00_master_table_creation.R and
+> start directly from `analysis/01.1_replicates_correlation_plots.R`.
+
+### 5. Build the master table
 
 Run once to produce `results/supplementary_tables/Supplementary_Table4.tsv`, which is
 read by every downstream analysis script:
@@ -103,9 +119,9 @@ read by every downstream analysis script:
 source("analysis/00_master_table_creation.R")
 ```
 
-### 5. Run analyses
+### 6. Run analyses
 
-Each numbered script in `analysis/` is self-contained. Run in order or independently:
+Each numbered script in `analysis/` is self-contained. Run in order:
 
 ```r
 source("analysis/01.1_replicates_correlation_plots.R")
@@ -118,22 +134,10 @@ See [`analysis/README.md`](analysis/README.md) for a full description of every s
 
 ---
 
-## HPC pipeline
-
-The `psi_calculation_pipeline/` directory contains the compute-intensive processing steps
-(barcode–variant association → DiMSum → PSI per barcode → PSI per variant).
-See [`psi_calculation_pipeline/README.md`](psi_calculation_pipeline/README.md) for
-cluster-specific instructions.
-
-> **Shortcut:** if you download the `psi_per_barcode` files from Figshare
-> (https://doi.org/10.6084/m9.figshare.32337414) and place them under
-> `data/processed/03_psi_per_barcode/`, you can skip steps 01–03 and start
-> directly from `psi_calculation_pipeline/04_psi_per_variant/`.
-
 ## Data availability
 
 - **DNA/cDNA sequencing data** — European Nucleotide Archive (ENA) under accession [PRJEB111846](https://www.ebi.ac.uk/ena/browser/view/PRJEB111846).
-- **PSI values** — Supplementary Table 4 (this repository: `results/supplementary_tables/Supplementary_Table4.tsv`).
+- **PSI values per variant** — Supplementary Table 4 of the paper.
 - **Processed prediction scores** — Supplementary Table 12.
 - **Barcode-level read counts, exon/variant sequences, flanking genomic regions, and unprocessed predictor scores** — Figshare: https://doi.org/10.6084/m9.figshare.32337414
 
