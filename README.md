@@ -1,18 +1,12 @@
 # OpenSplice
 
-**OpenSplice: the impact of half a million mutations on the alternative splicing of 600 human exons**
-
-Gioia Quarantani, Joseph Clarke, Mike Thompson, Fei Sang, Juan Valcárcel, Ben Lehner
-
-**Interactive browser ExonExplorer:** https://results.hgi.sanger.ac.uk/OpenSplice/
-
----
-
 ## Overview
 
 OpenSplice quantifies the impact of >590,000 variants on the alternative splicing of 608 human
 exons by massively parallel site-saturation mutagenesis in minigene constructs.
 This repository contains all code to reproduce the analyses and figures in the paper.
+
+**Interactive browser ExonExplorer:** https://results.hgi.sanger.ac.uk/OpenSplice/
 
 ---
 
