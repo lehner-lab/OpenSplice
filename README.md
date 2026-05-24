@@ -87,7 +87,7 @@ The following external database files must be downloaded separately and placed i
 | `branch_point/lstm.gencode_v19.hg19.top.bed.gz` | LaBranchoR — http://bejerano.stanford.edu/labranchor/downloads/dat/lstm.gencode_v19.hg19.top.bed.gz |
 | `branch_point/lstm.gencode_v19.hg19.all.tsv.gz` | LaBranchoR — http://bejerano.stanford.edu/labranchor/downloads/dat/lstm.gencode_v19.hg19.all.tsv.gz |
 
-## 4. HPC pipeline
+### 4. HPC pipeline
 
 The `psi_calculation_pipeline/` directory contains the compute-intensive processing steps
 (barcode–variant association → DiMSum → PSI per barcode → PSI per variant).
