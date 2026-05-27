@@ -32,6 +32,11 @@ OpenSplice/
 │   ├── 01.x – 07_*.R                   ← analysis scripts (see analysis/README.md)
 │   └── README.md
 │
+├── benchmarking_predictors/            ← predictor benchmarking framework
+│   ├── docs/                           ← method notes, benchmarking summaries, repo documentation
+│   ├── plotting/                       ← manuscript plotting and figure-generation scripts
+│   └── scripts/                        ← model inference + processing pipelines
+│
 ├── data/
 │   ├── raw/                            ← raw sequencing data 
 │   ├── processed/                      ← HPC pipeline outputs (add here the PSI per barcode)
