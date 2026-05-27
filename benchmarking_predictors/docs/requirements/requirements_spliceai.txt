@@ -1,0 +1,9 @@
+numpy
+pandas
+pyarrow
+tensorflow
+keras
+spliceai
+biopython
+pyfastx
+ensembl_rest

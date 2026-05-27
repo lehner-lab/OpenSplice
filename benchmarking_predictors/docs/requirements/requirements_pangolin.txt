@@ -1,0 +1,9 @@
+numpy
+pandas
+pyarrow
+torch
+biopython
+pyfastx
+gffutils
+pyvcf
+git+https://github.com/tkzeng/Pangolin.git

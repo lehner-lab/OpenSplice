@@ -1,0 +1,12 @@
+numpy<2
+pandas
+pyarrow==14.0.2
+fastparquet
+tqdm
+torch==1.10.1
+torchvision==0.11.2
+torchaudio==0.10.1
+sinkhorn-transformer
+pyfaidx
+pyvcf3
+pyensembl

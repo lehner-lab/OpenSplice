@@ -1,0 +1,163 @@
+# AlphaGenome Local Setup Guide
+
+This project uses the local AlphaGenome Research model rather than the hosted API.
+
+You will need:
+    - AlphaGenome
+    - AlphaGenome Research
+    - Hugging Face account + access token
+    - GPU-enabled environment recommended
+
+Official resources:
+    - AlphaGenome:
+      https://github.com/google-deepmind/alphagenome
+
+    - Hugging Face model collection:
+      https://huggingface.co/collections/google/alphagenome
+
+    - Kaggle model collection:
+      https://www.kaggle.com/models/google/alphagenome
+
+
+# ============================================================
+# INSTALLATION
+# ============================================================
+
+pip install alphagenome
+pip install alphagenome-research
+pip install huggingface_hub
+
+
+# ============================================================
+# OPTIONAL: IMPROVE DETERMINISM
+# ============================================================
+
+These flags are optional, but can help reduce stochastic variation
+from XLA/JAX GPU execution.
+
+IMPORTANT:
+These environment variables must be set BEFORE loading model code.
+
+Example:
+
+import os
+
+# Flags to improve determinism
+os.environ['XLA_FLAGS'] = ' '.join([
+    '--xla_gpu_deterministic_ops',
+    '--xla_gpu_enable_scatter_determinism_expander=True',
+    '--xla_gpu_enable_triton_gemm=False',
+])
+
+# Increase available GPU memory fraction
+os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION'] = '0.9'
+
+
+# ============================================================
+# REQUIRED IMPORTS
+# ============================================================
+
+import os
+
+from alphagenome.data import gene_annotation
+from alphagenome.data import genome
+from alphagenome.data import transcript as transcript_utils
+from alphagenome.visualization import plot_components
+
+from alphagenome_research.model import dna_model
+
+import matplotlib
+import numpy as np
+import pandas as pd
+
+
+# ============================================================
+# HUGGING FACE LOGIN
+# ============================================================
+
+You must authenticate before downloading AlphaGenome weights.
+
+1) Create a Hugging Face account:
+   https://huggingface.co/
+
+2) Generate a READ token:
+   https://huggingface.co/settings/tokens
+
+3) Run the login code below.
+
+
+# ============================================================
+# RESET HF TOKEN STATE + LOGIN
+# ============================================================
+
+import os
+
+from huggingface_hub import login, whoami
+from getpass import getpass
+
+# Remove any bad env token overriding login
+os.environ.pop("HF_TOKEN", None)
+
+# Remove cached token files for a clean reset
+for p in [
+    "/root/.cache/huggingface/token",
+    "/root/.huggingface/token",
+]:
+    try:
+        os.remove(p)
+        print(f"Removed: {p}")
+    except FileNotFoundError:
+        pass
+
+# Paste a fresh Hugging Face READ token
+token = getpass("Paste fresh HF token (starts with hf_): ").strip()
+
+# Login
+login(token=token, add_to_git_credential=False)
+
+# Also set env variable explicitly
+os.environ["HF_TOKEN"] = token
+
+# Confirm active account
+print(whoami())
+
+
+# ============================================================
+# LOAD THE MODEL
+# ============================================================
+
+The easiest helper functions are:
+
+    dna_model.create_from_huggingface('all_folds')
+
+or
+
+    dna_model.create_from_kaggle('all_folds')
+
+
+# ============================================================
+# HUGGING FACE VERSION
+# ============================================================
+
+from alphagenome_research.model import dna_model
+
+model = dna_model.create_from_huggingface("all_folds")
+
+
+# ============================================================
+# KAGGLE VERSION
+# ============================================================
+
+from alphagenome_research.model import dna_model
+
+model = dna_model.create_from_kaggle("all_folds")
+
+
+# ============================================================
+# NOTES
+# ============================================================
+
+- GPU recommended.
+- First model download is large and may take time.
+- The helper functions automatically download and configure the weights.
+- The local AlphaGenome Research model is separate from the hosted AlphaGenome API.
